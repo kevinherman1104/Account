@@ -11,7 +11,7 @@ class TransferHistory extends TransactionHistory_1.TransactionHistory {
         this.toAccount = toAccount;
     }
     toString() {
-        return `${super.toString()} \ntransfer to: ${this.toAccount.getName()}`;
+        return `${super.toString()} transfer to: ${this.toAccount.getName()}`;
     }
 }
 exports.TransferHistory = TransferHistory;

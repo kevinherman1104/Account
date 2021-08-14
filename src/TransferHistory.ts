@@ -9,7 +9,7 @@ export class TransferHistory extends TransactionHistory {
         this.toAccount = toAccount;
     }
     toString(): string {
-        return `${super.toString()} \ntransfer to: ${this.toAccount.getName()}`
+        return `${super.toString()} transfer to: ${this.toAccount.getName()}`
     }
 }
     

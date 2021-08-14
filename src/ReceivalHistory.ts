@@ -9,7 +9,7 @@ export class ReceivalHistory extends TransactionHistory {
         this.fromAccount = fromAccount;
     }
     toString(): string {
-        return `${super.toString()} \ntransfer from: ${this.fromAccount.getName()}`
+        return `${super.toString()} recieve transfer from: ${this.fromAccount.getName()}`
     }
 }
         

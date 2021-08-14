@@ -11,7 +11,7 @@ class ReceivalHistory extends TransactionHistory_1.TransactionHistory {
         this.fromAccount = fromAccount;
     }
     toString() {
-        return `${super.toString()} \ntransfer from: ${this.fromAccount.getName()}`;
+        return `${super.toString()} recieve transfer from: ${this.fromAccount.getName()}`;
     }
 }
 exports.ReceivalHistory = ReceivalHistory;
