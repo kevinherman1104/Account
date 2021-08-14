@@ -30,29 +30,29 @@ class Account {
     }
     transfer(amount, toAccount) {
         toAccount._balance -= amount;
-        this._transactionHistories.push(new TransactionHistory_1.TransactionHistory(actions[2], amount));
+        this._transactionHistories.push(new TransferHistory_1.TransferHistory(actions[2], amount, toAccount));
         this._transferHistories.push(new TransferHistory_1.TransferHistory(actions[2], amount, toAccount));
         this.writeHistory("Transfer");
         toAccount.receive(amount, this);
     }
     receive(amount, fromAccount) {
         fromAccount._balance += amount;
-        this._transactionHistories.push(new TransactionHistory_1.TransactionHistory(actions[3], amount));
+        this._transactionHistories.push(new ReceivalHistory_1.ReceivalHistory(actions[3], amount, fromAccount));
         this._receivalHistories.push(new ReceivalHistory_1.ReceivalHistory(actions[3], amount, fromAccount));
         this.writeHistory("Receival");
     }
     writeHistory(typeHistory) {
         switch (typeHistory) {
             case "Transaction":
-                console.log(`\n${this._name}'s transaction history: \n`);
+                console.log(`\n${this._name}'s transaction history:\n${this._name} Current Balance:(${this._balance})`);
                 this._transactionHistories.forEach(e => console.log(e.toString()));
                 break;
             case "Transfer":
-                console.log(`\n${this._name}'s transfer history: \n`);
+                console.log(`\n${this._name}'s transfer history:`);
                 this._transferHistories.forEach(e => console.log(e.toString()));
                 break;
             case "Receival":
-                console.log(`\n${this._name}'s Receival history: \n`);
+                console.log(`\n${this._name}'s Receival history:`);
                 this._receivalHistories.forEach(e => console.log(e.toString()));
                 break;
             default:
