@@ -1,0 +1,24 @@
+{
+  "name": "test",
+  "version": "1.0.0",
+  "description": "By Kevin Herman Otnieliem",
+  "main": "index.js",
+  "scripts": {
+    "start": "tsc-watch --onsuccess \"node dist/index.js\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kevinherman1104/Account.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/kevinherman1104/Account/issues"
+  },
+  "homepage": "https://github.com/kevinherman1104/Account#readme",
+  "devDependencies": {
+    "tsc-watch": "^2.1.2",
+    "typescript": "^3.5.1"
+  }
+}
