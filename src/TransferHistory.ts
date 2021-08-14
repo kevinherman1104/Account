@@ -1,18 +1,15 @@
 import { Account } from "./Account"
+import { TransactionHistory } from "./TransactionHistory"
 
-export class TransferHistory {
-    action: number
-    amount: number
-    date: string
-    toAccount: Account
-    constructor(action: number, amount: number, toAccount: Account) {
-        this.action = action
-        this.amount = amount
-        this.date = Date()
-        this.toAccount = toAccount
+export class TransferHistory extends TransactionHistory {
+    protected date: string
+    constructor(protected action: string, protected amount: number, protected toAccount: Account) {
+        super(action, amount);
+        this.date = Date();
+        this.toAccount = toAccount;
     }
     toString(): string {
-        return `@${this.action} [${this.date}] - ${this.amount} ${this.toAccount}`
+        return `${super.toString()} \ntransfer to: ${this.toAccount.getName()}`
     }
 }
     
