@@ -15,3 +15,4 @@ class TransferHistory extends TransactionHistory_1.TransactionHistory {
     }
 }
 exports.TransferHistory = TransferHistory;
+//# sourceMappingURL=TransferHistory.js.map

@@ -9,7 +9,7 @@ export declare class Account {
     getBalance(): number;
     deposit(amount: number): void;
     withdraw(amount: number): void;
-    transfer(amount: number, toAccount: Account): void;
-    receive(amount: number, fromAccount: Account): void;
+    transfer<T extends Account>(amount: number, toAccount: T): void;
+    receive<T extends Account>(amount: number, fromAccount: T): void;
     writeHistory(typeHistory: string): void;
 }

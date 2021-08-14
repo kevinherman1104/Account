@@ -4,6 +4,9 @@
     "outDir": "./dist",
     "rootDir": "./src",
     "declaration": true,
-    "module": "commonjs"
+    "module": "commonjs",
+    "noEmitOnError": true,
+    //"lib": ["es5", "dom", "es2015.collection"]
+    "sourceMap": true
     }
-   }
+}

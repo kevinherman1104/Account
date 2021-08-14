@@ -21,7 +21,7 @@ class Account {
     deposit(amount) {
         this._balance += amount;
         this._transactionHistories.push(new TransactionHistory_1.TransactionHistory(actions[0], amount));
-        this.writeHistory("Tranasaction");
+        this.writeHistory("Transaction");
     }
     withdraw(amount) {
         this._balance -= amount;
@@ -61,3 +61,4 @@ class Account {
     }
 }
 exports.Account = Account;
+//# sourceMappingURL=Account.js.map

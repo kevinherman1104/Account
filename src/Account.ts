@@ -1,6 +1,8 @@
  import {ReceivalHistory} from "./ReceivalHistory"
  import {TransactionHistory} from "./TransactionHistory"
  import {TransferHistory} from "./TransferHistory"
+
+
  
  const actions = ['deposit', 'withdraw', 'transfer', 'receive']
 
@@ -30,14 +32,15 @@
     deposit(amount: number):void {
         this._balance += amount;
         this._transactionHistories.push(new TransactionHistory(actions[0], amount));
-        this.writeHistory("Tranasaction");
+        this.writeHistory("Transaction");
     }
     withdraw(amount: number): void {
         this._balance -= amount;
         this._transactionHistories.push(new TransactionHistory(actions[1], amount));
         this.writeHistory("Transaction");
     }
-    transfer(amount: number, toAccount: Account):void {
+    // GENERIC APPROACH
+    transfer<T extends Account>(amount: number, toAccount: T):void {
         toAccount._balance -= amount;
         this._transactionHistories.push(new TransactionHistory(actions[2], amount));
         this._transferHistories.push(new TransferHistory(actions[2], amount, toAccount))
@@ -46,7 +49,7 @@
 
         
     }
-    receive(amount: number, fromAccount: Account):void {
+    receive<T extends Account>(amount: number, fromAccount: T):void {
         fromAccount._balance += amount;
         this._transactionHistories.push(new TransactionHistory(actions[3], amount));
         this._receivalHistories.push(new ReceivalHistory(actions[3], amount, fromAccount))

@@ -15,3 +15,4 @@ class ReceivalHistory extends TransactionHistory_1.TransactionHistory {
     }
 }
 exports.ReceivalHistory = ReceivalHistory;
+//# sourceMappingURL=ReceivalHistory.js.map
